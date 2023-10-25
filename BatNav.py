@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-Aircraft_carrier ={(2,2):False,(2,3):False,(2,4):False,(2,5):False,(2,6):False}
+Aircraft_carrier ={(2,2):True,(2,3):True,(2,4):True,(2,5):True,(2,6):True}
 Carrier = {(4,1):True,(5,1):True,(6,1):True,(7,1):True}
 Destroyer = {(5,3):True,(6,3):True,(7,3):True}
 Submarine = {(5,8):True,(5,9):True,(5,10):True}
@@ -15,9 +15,11 @@ while Aircraft_carrier:
     touches = 0
     if coord in Aircraft_carrier:print("Aircraft_carrier touché")
     Aircraft_carrier[coord]= False
-for HitPoint in Aircraft_carrier.values():
-    # print(HitPoint)
-    if (HitPoint == False):
-        touches +=1
-if (touches == len(Aircraft_carrier)):
-    print("Aircraft_carrier sunk!")
+    if True not in Aircraft_carrier.values():
+        print('Aircraft_carrier is sunk')
+    #     for HitPoint in Aircraft_carrier.values():
+    #         # print(HitPoint)
+    #         if (HitPoint == False):
+    #         touches +=1
+    # if (touches == len(Aircraft_carrier)):
+    #  print("Aircraft_carrier sunk!")
